@@ -2,5 +2,8 @@
 =            Imports            =
 ===============================*/
 
-/*----------  Calculator  ----------*/
+/*----------  MEDIA QUERIES  ----------*/
+@import "../mixins.scss";
+
+/*----------  CALCULATOR COMPONENT  ----------*/
 @import "./components/calculator";

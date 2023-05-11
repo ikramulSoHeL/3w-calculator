@@ -2,12 +2,13 @@ import React, { useState } from "react";
 // import "./calculator.scss";
 
 const Claculator1 = () => {
-  const [calculations, setCalculations] = useState("");
+  const [calculations, setCalculations] = useState(""); // 1st value is the state and 2nd value is the function to update the state
   const [result, setResult] = useState("");
 
-  const operators = ["+", "-", "*", "/", "%", "."];
+  const operators = ["+", "-", "*", "/", "%", "."]; // array of operators
 
   const updateCalculations = (value) => {
+    // function to update the calculations
     if (
       (operators.includes(value) && calculations === "") ||
       (operators.includes(value) && operators.includes(calculations.slice(-1)))
@@ -22,11 +23,13 @@ const Claculator1 = () => {
   };
 
   const clear = () => {
+    // function to clear the calculations
     setCalculations("");
     setResult("");
   };
 
-  const backspace = () => {
+  const removeLastDigit = () => {
+    // function to remove the last digit
     if (calculations === "") {
       return;
     }
@@ -52,24 +55,28 @@ const Claculator1 = () => {
   //   };
 
   const calculate = () => {
+    // function to calculate the result
     if (calculations === "") {
+      // if calculations is empty then return
       return;
     }
-    setCalculations(eval(calculations).toString());
+    setCalculations(eval(calculations).toString()); // eval function evaluates the string and executes it
   };
 
   return (
     <div className="calculator">
       <div className="calculator__container">
         <div className="displayResult">
-          {result ? <span>({result})</span> : ""} {calculations || "0"}
+          <span>
+            {result ? <span>({result})</span> : ""} {calculations || "0"}
+          </span>
         </div>
 
         <div className="row__container">
           <button className="input__value" onClick={() => clear()}>
             AC
           </button>
-          <button className="input__value" onClick={() => backspace()}>
+          <button className="input__value" onClick={() => removeLastDigit()}>
             C
           </button>
           <button
