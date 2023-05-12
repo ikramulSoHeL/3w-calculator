@@ -2,8 +2,8 @@ import React, { useState } from "react";
 // import "./calculator.scss";
 
 const Claculator1 = () => {
-  const [calculations, setCalculations] = useState(""); // 1st value is the state and 2nd value is the function to update the state
   const [result, setResult] = useState("");
+  const [calculations, setCalculations] = useState(""); // 1st value is the state and 2nd value is the function to update the state
 
   const operators = ["+", "-", "*", "/", "%", "."]; // array of operators
 
@@ -15,6 +15,12 @@ const Claculator1 = () => {
     ) {
       return;
     }
+
+    if (value === "." && calculations.includes(".")) {
+      // if value is . and calculations includes . then return
+      return;
+    }
+
     setCalculations(calculations + value);
 
     if (!operators.includes(value)) {
@@ -44,7 +50,11 @@ const Claculator1 = () => {
       return;
     }
 
-    setCalculations(eval(calculations).toString()); // eval function evaluates the string and executes it
+    try {
+      setCalculations(eval(calculations).toString()); // eval function evaluates the string and executes it
+    } catch (error) {
+      setCalculations("Error");
+    }
   };
 
   const calculatePercentage = () => {
@@ -153,7 +163,7 @@ const Claculator1 = () => {
         <div className="row__container">
           <button
             className="input__value"
-            value="1"
+            value={1}
             onClick={() => updateCalculations("1")}
           >
             1
