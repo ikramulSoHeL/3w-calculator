@@ -1,0 +1,45 @@
+/*=============================================
+=            COLORS                           =
+=============================================*/
+
+/* background color */
+$bg-black: rgb(0, 0, 0);
+$primary-bg-color: #3b4455;
+$orange-bg: #f59e0b;
+
+/* text color */
+$text-white: #fff;
+$text-black: #000;
+
+/* box-shadow color */
+$container-box-shadow: 0px 0px 15px 0px rgba(230, 5, 5, 0.75);
+$button-box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+  rgba(0, 0, 0, 0.22) 0px 10px 10px;
+
+/*=============================================
+=            BREAKPOINTS                      =
+=============================================*/
+
+$breakpoints: (
+  // Important
+  mobile: 320px,
+  mediumMobile: 376px,
+  largeMobile: 420px,
+  miniPortraitTablet: 510px,
+  portraitTablet: 641px,
+  // Important
+  tablet: 768px,
+  mediumTablet: 837px,
+  largeTablet: 879px,
+  extraLargeTablet: 991px,
+  // Important
+  smallDesktop: 1024px,
+  semiLargeDesktop: 1150px,
+  desktop: 1200px,
+  // Important
+  mediumDesktop: 1280px,
+  extraLargeDesktop: 1440px,
+  smallFourKDevice: 1680px,
+  mediumFourKDevice: 1920px,
+  fourKDevice: 2160px
+);
