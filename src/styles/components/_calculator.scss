@@ -101,6 +101,17 @@
       }
     }
 
+    .row__container > :nth-child(4) {
+      color: $text-white;
+      font-size: 25px;
+      background-color: $orange-bg;
+
+      &:hover {
+        background-color: $orange-bg1;
+        transition: 0.3s ease-in-out;
+      }
+    }
+
     .row__container1 {
       width: 100%;
       display: flex;
@@ -134,10 +145,11 @@
 
     .row__container1 > :nth-child(3) {
       width: 150px;
-      background: $orange-bg;
+      background: $button-bg-color;
+      font-size: 25px;
 
       &:hover {
-        background: $green;
+        background: $button-bg-color1;
         transition: 0.3s ease-in-out;
       }
     }
