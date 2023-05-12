@@ -94,9 +94,10 @@
         box-shadow: $button-box-shadow;
         border-radius: 5px;
 
-        // &:hover {
-        //   background-color: #2c2f3a;
-        // }
+        &:hover {
+          background-color: $secoundary-bg-color;
+          transition: 0.3s ease-in-out;
+        }
       }
     }
 
@@ -124,9 +125,10 @@
         box-shadow: $button-box-shadow;
         border-radius: 5px;
 
-        // &:hover {
-        //   background-color: #2c2f3a;
-        // }
+        &:hover {
+          background-color: $secoundary-bg-color;
+          transition: 0.3s ease-in-out;
+        }
       }
     }
 
@@ -134,9 +136,10 @@
       width: 150px;
       background: $orange-bg;
 
-      // &:hover {
-      //   background: green;
-      // }
+      &:hover {
+        background: $green;
+        transition: 0.3s ease-in-out;
+      }
     }
   }
 }
