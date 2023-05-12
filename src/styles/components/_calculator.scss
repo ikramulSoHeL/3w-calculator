@@ -34,16 +34,18 @@
 
     .displayResult {
       height: 50px;
-      width: 100%;
+      width: 320px;
       display: flex;
       align-items: center;
 
-      span {
+      .display__value {
         width: 100%;
-        font-size: 30px;
+        height: auto;
+        font-size: 25px;
         font-weight: 600;
         color: white;
         text-align: right;
+        overflow-x: hidden;
       }
     }
 

@@ -37,37 +37,33 @@ const Claculator1 = () => {
     setCalculations(value);
   };
 
-  //   const createDigits = () => {
-  //     const digits = [];
-
-  //     for (let i = 1; i < 10; i++) {
-  //       digits.push(
-  //         <button
-  //           className="input__value"
-  //           key={i}
-  //           onClick={() => updateCalculations(i.toString())}
-  //         >
-  //           {i}
-  //         </button>
-  //       );
-  //     }
-  //     return digits;
-  //   };
-
   const calculate = () => {
     // function to calculate the result
     if (calculations === "") {
       // if calculations is empty then return
       return;
     }
+
     setCalculations(eval(calculations).toString()); // eval function evaluates the string and executes it
+  };
+
+  const calculatePercentage = () => {
+    if (calculations === "") {
+      return;
+    }
+
+    if (calculations > 0) {
+      let value = calculations / 100;
+      setCalculations(value.toString());
+      setResult(value.toString());
+    }
   };
 
   return (
     <div className="calculator">
       <div className="calculator__container">
         <div className="displayResult">
-          <span>
+          <span className="display__value">
             {result ? <span>({result})</span> : ""} {calculations || "0"}
           </span>
         </div>
@@ -81,12 +77,13 @@ const Claculator1 = () => {
           </button>
           <button
             className="input__value"
-            onClick={() => updateCalculations("%")}
+            onClick={() => calculatePercentage("%")}
           >
             %
           </button>
           <button
             className="input__value"
+            value="/"
             onClick={() => updateCalculations("/")}
           >
             &divide;
@@ -96,24 +93,28 @@ const Claculator1 = () => {
         <div className="row__container">
           <button
             className="input__value"
+            value="7"
             onClick={() => updateCalculations("7")}
           >
             7
           </button>
           <button
             className="input__value"
+            value="8"
             onClick={() => updateCalculations("8")}
           >
             8
           </button>
           <button
             className="input__value"
+            value="9"
             onClick={() => updateCalculations("9")}
           >
             9
           </button>
           <button
             className="input__value"
+            value="*"
             onClick={() => updateCalculations("*")}
           >
             &times;
@@ -129,6 +130,7 @@ const Claculator1 = () => {
           </button>
           <button
             className="input__value"
+            value="5"
             onClick={() => updateCalculations("5")}
           >
             5
@@ -141,6 +143,7 @@ const Claculator1 = () => {
           </button>
           <button
             className="input__value"
+            value="-"
             onClick={() => updateCalculations("-")}
           >
             &ndash;
@@ -150,6 +153,7 @@ const Claculator1 = () => {
         <div className="row__container">
           <button
             className="input__value"
+            value="1"
             onClick={() => updateCalculations("1")}
           >
             1
@@ -162,12 +166,14 @@ const Claculator1 = () => {
           </button>
           <button
             className="input__value"
+            value="3"
             onClick={() => updateCalculations("3")}
           >
             3
           </button>
           <button
             className="input__value"
+            value="+"
             onClick={() => updateCalculations("+")}
           >
             +
@@ -177,12 +183,14 @@ const Claculator1 = () => {
         <div className="row__container1">
           <button
             className="input__value"
+            value="0"
             onClick={() => updateCalculations("0")}
           >
             0
           </button>
           <button
             className="input__value"
+            value="."
             onClick={() => updateCalculations(".")}
           >
             .
